@@ -28,26 +28,23 @@ class Song
     end
 
     def self.genre_count
-        
         genre_hash={}
         @@genres.each do |genre|
         genre_hash[genre] ||= []
         genre_hash[genre] = @@genres.count genre
         end
-        genre_hash
-
-       
-                
+        genre_hash                
     end
 
-    def self.artists_count
-       
-        artist_hash = {}
-        @@artists.each do |artist|
-            genre_hash[artist] ||= []
-            genre_hash[artist] = @@artists.count artist
-            end
-            artist_hash
-    
+    def self.artist_count
+        artist_song = {}
+        
+            
+        self.artists.each do |artist|
+            artist_song[artist] ||= []
+                artist_song[artist] = @@artists.count(artist) 
+        end
+        p artist_song
+
     end
 end
